@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+$white: #E2E2E2;
+$black: #090909;
+
+body {
+    background-color: $black;
+    position: relative;
+    &::before {
+        position: fixed;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: radial-gradient(circle at 20% 50%, rgba($white, 0.15) 5%, $black 40%);
+        z-index: -1;
+    }
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2.8rem;
+}
+
+.faq-container {
+    margin-top: 4rem;
+    margin-bottom: 12rem;
+    width: 65rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.header-container {
+    width: 65rem;
+    text-align: center;
+    margin-top: 6rem;
+    h1 {
+        color: $white;
+        font-size: 4.4rem;
+        font-weight: 400;
+    }
+    p {
+        padding-block: 1.6rem;
+        margin-inline: 15%;
+        font-size: 1.2rem;
+        color: rgba($white, .7);
+        span {
+            color: $white;
+        }
+    }
+}
+
+p {
+    font-size: 1.8rem;
+    color: $white;
+    padding-block: 2rem;
+}
+
+.faq-main {
+    background-color: rgba($white, .06);
+    border-radius: 1.2rem;
+    .question-box {
+        padding-inline: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        .icon {
+            height: 2.4rem;
+            aspect-ratio: 1 / 1;
+            background-color: transparent;
+            border: none;
+            transform: rotate(90deg);
+            transition: transform .3s ease;
+            cursor: pointer;
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+            .hidden {
+                display: none;
+            }
+        }
+        .rotate {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.answer-main {
+    height: 0;
+    overflow: hidden;
+    transition: height .3s ease;
+    .answer-container {
+        padding-inline: 2rem;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            width: calc(100% - 4rem);
+            height: 1px;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin-inline: auto;
+            background-color: rgba($white, .125);
+        }
+    }
+}
+
+
+@media (max-width: 991px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        width: 100%;
+    }
+    
+    .header-container {
+        width: 100%;
+    }    
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+    body::before {
+        background: radial-gradient(circle at 20% 50%, rgba($white, 0.15) 5%, $black 50%);
+    }
+    .header-container p {
+        margin-inline: 0;
+    }
+}
