@@ -10,7 +10,7 @@ faqItems.forEach((faq) => {
     const iconImages = icon.querySelectorAll(".icon-img");
 
     questionBox.addEventListener("click", () => {
-        // Close any other open FAQs
+        // close any other open FAQs
         faqItems.forEach((item) => {
             if (item !== faq) {
                 const otherAnswerMain = item.querySelector(".answer-main");
@@ -24,16 +24,16 @@ faqItems.forEach((faq) => {
             }
         });
 
-        // Toggle the current FAQ
+        // toggle the current FAQ
         const isOpen = answerMain.style.height && answerMain.style.height !== "0px";
         if (isOpen) {
             answerMain.style.height = "0px";
-            iconImages[0].classList.remove("hidden"); // Show add icon
-            iconImages[1].classList.add("hidden"); // Hide remove icon
+            iconImages[0].classList.remove("hidden"); 
+            iconImages[1].classList.add("hidden"); 
         } else {
             answerMain.style.height = `${answerContainer.scrollHeight}px`;
-            iconImages[0].classList.add("hidden"); // Hide add icon
-            iconImages[1].classList.remove("hidden"); // Show remove icon
+            iconImages[0].classList.add("hidden"); 
+            iconImages[1].classList.remove("hidden"); 
         }
         
         icon.classList.toggle("rotate");
