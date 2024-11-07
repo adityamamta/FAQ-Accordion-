@@ -61,6 +61,9 @@ main {
 .header-container p span {
   color: #E2E2E2;
 }
+.header-container p a {
+  text-decoration: none;
+}
 
 p {
   font-size: 1.8rem;
