@@ -16,4 +16,4 @@ This project is a clean and interactive FAQ section built with HTML, CSS, and Ja
 💼 Contact me on linkedin. [Linkedin](https://www.linkedin.com/in/adityamamta/) <br>
 adityamamta4@gmail.com
 
-<!-- ![preview img](img/faq-mockup.png) -->
+![preview img](img/faq-accordion.png)
